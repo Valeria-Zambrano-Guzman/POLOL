@@ -1,2 +1,2 @@
-class Professional < ApplicationRecord
+class Professional < User
 end
