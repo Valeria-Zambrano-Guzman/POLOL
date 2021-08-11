@@ -23,6 +23,9 @@
                 input_html: { autocomplete: "current-password" } %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
+    <%= f.input :birthdate %>
+    <%= f.input :phone_number %>
+    <%= f.input :address %>
     <% if f.object.professional? %>
       <%= f.input :biography %>
     <% end %>
