@@ -10,10 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_10_195334) do
+ActiveRecord::Schema.define(version: 2021_08_11_201323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.bigint "professional_id", null: false
+    t.string "status"
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "service_id_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_appointments_on_customer_id"
+    t.index ["professional_id"], name: "index_appointments_on_professional_id"
+    t.index ["service_id_id"], name: "index_appointments_on_service_id_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.bigint "professional_id", null: false
+    t.integer "calification"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_reviews_on_customer_id"
+    t.index ["professional_id"], name: "index_reviews_on_professional_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.integer "category"
+    t.decimal "price"
+    t.integer "sub_category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "specialities", force: :cascade do |t|
+    t.bigint "professional_id", null: false
+    t.bigint "service_id", null: false
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["professional_id"], name: "index_specialities_on_professional_id"
+    t.index ["service_id"], name: "index_specialities_on_service_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,4 +81,11 @@ ActiveRecord::Schema.define(version: 2021_08_10_195334) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "appointments", "services", column: "service_id_id"
+  add_foreign_key "appointments", "users", column: "customer_id"
+  add_foreign_key "appointments", "users", column: "professional_id"
+  add_foreign_key "reviews", "users", column: "customer_id"
+  add_foreign_key "reviews", "users", column: "professional_id"
+  add_foreign_key "specialities", "services", column: "service_id"
+  add_foreign_key "specialities", "users", column: "professional_id"
 end
