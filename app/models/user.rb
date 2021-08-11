@@ -11,4 +11,6 @@ class User < ApplicationRecord
   def professional?
     type == "Professional"
   end
+
+  has_many_attached :photos
 end

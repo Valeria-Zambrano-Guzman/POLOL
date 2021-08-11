@@ -28,6 +28,8 @@
     <%= f.input :address %>
     <% if f.object.professional? %>
       <%= f.input :biography %>
+      <p>Upload your documents</p>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <% end %>
 
 
