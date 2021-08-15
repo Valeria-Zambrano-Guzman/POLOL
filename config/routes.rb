@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'uikit', to: 'pages#uikit'
   get 'type', to: 'pages#type'
+  get 'pages/search', to: 'pages#search'
+  get 'pages/result', to: 'pages#result'
 
   resources :users, only: [] do
     resources :reviews, only: [:create, :show]
