@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'pages/search', to: 'pages#search'
   get 'pages/result', to: 'pages#result'
 
-  resources :users, only: [] do
+  resources :users, only: [:index] do
     resources :reviews, only: [:create, :show]
     resources :appointments, only: [:create, :show]
     resources :specialities do
