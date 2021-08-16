@@ -19,4 +19,14 @@ class PagesController < ApplicationController
     @users = User.all
     @services = Service.all
   end
+
+  def accepted
+    @users = User.all
+    @services = Service.all
+  end
+
+  def rejected
+    @users = User.all
+    @services = Service.all
+  end
 end

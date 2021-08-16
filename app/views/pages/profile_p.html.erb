@@ -2,21 +2,29 @@
   <div class="row justify-content-center">
     <div class="col-md-6 justify-content-center">
         <div class="card">
-          <% @services do |s| %>
+          <% @services.each do |s| %>
             <h3><%= s.category %></h3> <%# aqui va el nombre de la categoría %>
           <% end %>
+
           <img src="" alt=""> <%# aqui va la imagen del perfil %>
-          <p></p> <%# aqui va la calificación %>
-          <% @users do |u| %>
-            <p><%= u.first_name u.last_name %></p>
-            <p><%= u.certification %></p>
-            <p><%= u.biography %></p>
+
+          <p><% 3.times do |i| %>
+            <span class="fas fa-star star-yellow"></span>
+          <% end %></p> <%# aqui va la calificación %>
+
+          <% @users.each do |user| %>
+            <p><%= user.first_name %></p>
+            <p><%= user.last_name %></p>
+            <p><%= user.certification %></p>
+            <p><%= user.biography %></p>
           <% end %>
+
           <button class="btn-lightblue-big">VOLVER</button>
           <button class="btn-blue-big">ENVIAR SOLICITUD</button>
         </div>
     </div>
-    <div class="col-md-6 justify-content-center">        
+    <div class="col-md-6 justify-content-center">
+      <%# aqui va el mapa %>
     </div>
   </div>
 </div>
