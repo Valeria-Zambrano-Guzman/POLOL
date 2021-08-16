@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'type', to: 'pages#type'
   get 'pages/search', to: 'pages#search'
   get 'pages/result', to: 'pages#result'
+  get 'pages/show', to: 'pages#show'
   get 'pages/profile_p', to: 'pages#profile_p'
   get 'pages/waiting', to: 'pages#waiting'
   get 'pages/accepted', to: 'pages#accepted'
