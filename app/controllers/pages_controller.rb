@@ -14,9 +14,24 @@ class PagesController < ApplicationController
 
   def result
   end
+
   
   def show
     @services = Service.all
   end
 
+  def profile_p
+    @users = User.all
+    @services = Service.all
+  end
+
+  def accepted
+    @users = User.all
+    @services = Service.all
+  end
+
+  def rejected
+    @users = User.all
+    @services = Service.all
+  end
 end

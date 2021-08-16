@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12 justify-content-center">
+        <div class="card justify-content-center">
+          <h3>Solicitud Confirmada</h3>
+
+          <img src="" alt="">
+
+          <% @users.each do |user| %>
+            <p><%= user.first_name %></p>
+            <p><%= user.last_name %></p>
+          <% end %>
+
+          <% @services.each do |s| %>
+            <h3><%= s.category %></h3> <%# aqui va el nombre de la categoría %>
+          <% end %>
+
+          <p><% 3.times do |i| %>
+            <span class="fas fa-star star-yellow"></span>
+          <% end %></p> <%# aqui va la calificación %>
+          
+          <p>Tiempo de espera estimada</p>
+          <small>20 Minutos</small>
+        </div>
+    </div>
+  </div>
+</div>
