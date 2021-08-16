@@ -14,4 +14,9 @@ class PagesController < ApplicationController
 
   def result
   end
+  
+  def show
+    @services = Service.all
+  end
+
 end
