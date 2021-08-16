@@ -7,4 +7,11 @@ class PagesController < ApplicationController
 
   def type
   end
+
+  def search
+    @services = Service.all
+  end
+
+  def result
+  end
 end
