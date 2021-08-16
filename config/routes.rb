@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'type', to: 'pages#type'
   get 'pages/search', to: 'pages#search'
   get 'pages/result', to: 'pages#result'
+  get 'pages/profile_p', to: 'pages#profile_p'
 
   resources :users, only: [:index] do
     resources :reviews, only: [:create, :show]
