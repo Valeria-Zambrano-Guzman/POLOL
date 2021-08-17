@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   devise_for :professionals
 
   get 'uikit', to: 'pages#uikit'
-  get 'type', to: 'pages#type'
 
   resources :users, only: [] do
     resources :reviews, only: [:create, :show]

@@ -32,13 +32,15 @@
       </li>
       <% else %>
         <li class="nav-item">
-          <a class="nav-link <%= 'active' if current_page?('/type') %>" href="/type">Inicia Sesión/Regístrate</a>
+          <a class="nav-link <%= 'active' if current_page?('/type') %>" href="/customers/sign_in">¿Eres Cliente?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <%= 'active' if current_page?('/type') %>" href="/professionals/sign_in">¿Eres Profesional?</a>
         </li>
       <% end %>
       </ul>
     </div>
   </div>
-
 <div class="text-center my-4">
   <h3>Footer</h3>
   <div class="footer">
@@ -56,3 +58,16 @@
 
   </div>
 </div>
+
+<div class="card-center my-4">
+<h3>Card Polol</h3>
+  <div class="card-polol">
+    <%= image_tag("ImgHomeCard1-01.png") %>
+    <div class="card-polol-infos">
+      <h2>Product name</h2>
+      <p>Product description with <strong>relevant info</strong> only.</p>
+    </div>
+  </div>
+</div>
+
+

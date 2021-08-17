@@ -1,0 +1,48 @@
+.card-polol {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  margin: 50px;
+}
+
+.card-polol img {
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  padding-left: 80px;
+}
+
+.card-polol h1 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+.card-polol h2 {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+.card-polol p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.card-polol .card-polol-infos {
+  padding: 180px;
+}
+
