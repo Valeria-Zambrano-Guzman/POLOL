@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :professionals
 
   get 'uikit', to: 'pages#uikit'
+
   get 'type', to: 'pages#type'
   get 'pages/search', to: 'pages#search'
   get 'pages/result', to: 'pages#result'
