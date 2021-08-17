@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'pages/list_c', to: 'pages#list_c'
   get 'pages/list_p', to: 'pages#list_p'
 
-  resources :users, only: [:index] do
+  resources :professionals, only: [:index] do
     resources :reviews, only: [:create, :show]
     resources :appointments, only: [:create, :show]
     resources :specialities do
