@@ -16,7 +16,7 @@ class PagesController < ApplicationController
   end
 
   
-  def show
+  def show_profile_c
     @services = Service.all
   end
 
