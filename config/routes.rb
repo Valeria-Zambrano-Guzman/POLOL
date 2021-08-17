@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get 'pages/waiting', to: 'pages#waiting'
   get 'pages/accepted', to: 'pages#accepted'
   get 'pages/rejected', to: 'pages#rejected'
+  get 'pages/create_profile_c', to: 'pages#create_profile_c'
+  get 'pages/list_c', to: 'pages#list_c'
+  get 'pages/list_p', to: 'pages#list_p'
 
   resources :users, only: [:index] do
     resources :reviews, only: [:create, :show]

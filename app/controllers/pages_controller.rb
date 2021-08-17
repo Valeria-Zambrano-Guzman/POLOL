@@ -20,6 +20,11 @@ class PagesController < ApplicationController
     @services = Service.all
   end
 
+  def create_profile_c
+    @services = Service.all
+  end
+
+
   def profile_p
     @users = User.all
     @services = Service.all
@@ -31,6 +36,16 @@ class PagesController < ApplicationController
   end
 
   def rejected
+    @users = User.all
+    @services = Service.all
+  end
+
+  def list_p
+    @users = User.all
+    @services = Service.all
+  end
+
+  def list_c
     @users = User.all
     @services = Service.all
   end
