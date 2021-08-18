@@ -14,11 +14,13 @@ Rails.application.routes.draw do
   get 'pages/rejected', to: 'pages#rejected'
 
   resources :sub_services, only: [:show]
+  resources :services do
+    resources :sub_services, shallow: true
+  end
   resources :users, only: [:index] do
     resources :reviews, only: [:create, :show]
     resources :appointments, only: [:create, :show]
     resources :specialities do
-      resources :services
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
