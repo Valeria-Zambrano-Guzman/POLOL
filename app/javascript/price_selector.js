@@ -1,5 +1,5 @@
 const priceSelector = () => {
-  const sub_category = document.getElementById('sub_category');
+  const sub_category = document.getElementById('sub_service_id');
   if (sub_category) {
     sub_category.addEventListener("input", (event) => {
       const sub_serviceId = event.currentTarget.value

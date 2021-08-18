@@ -25,12 +25,14 @@ puts "*" * 80
 professional_one = Professional.new(
   email: "pro_one@mail.com",
   password: "123456",
+  address: "Amunátegui 20, Santiago, Chile"
 )
 professional_one.save!
 
 professional_two = Professional.new(
   email: "pro_two@mail.com",
   password: "123456",
+  address: "Huérfanos 1112, Santiago, Chile"
 )
 professional_two.save!
 puts "*" * 80
