@@ -1,23 +1,23 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
-     <div class="padding-nav-card">  
+     <div class="padding-nav-card">
         <div class="card-form">
-            <h2 class="text">Indícanos qué tipo de servicio de reparación buscas</h2>
-          <%= simple_form_for pages_result_path,  method: :get  do %>
-          <div class="mb-4">
-            <%= text_field_tag :query, params[:query], class: "form-control search-input", placeholder: "Dirección" %>
-          </div>
-          <div class="mb-4"> 
-            <%= select_tag "service", options_from_collection_for_select(@services, "id", "category"), class:"form-control", placeholder: "Tipo de Servicio" %>
-          </div>
-          <div class="mb-4" >
-            <%= select_tag "service", options_from_collection_for_select(@services, "id", "sub_category"),  class:"form-control", placeholder: "Tipo de Problema" %>
-          </div>
-          <div class="form-actions row justify-content-center">
-            <input type="submit" value="Siguiente" class="btn-blue-big">
-          </div>
-        <% end %>
+          <h2 class="text">Indícanos qué tipo de servicio de reparación buscas</h2>
+          <%= simple_form_for :address, url:professionals_path,  method: :get  do %>
+            <div class="mb-4">
+              <%= text_field_tag :query, params[:query], class: "form-control search-input", placeholder: "Dirección" %>
+            </div>
+            <div class="mb-4">
+              <%= select_tag "service_id", options_from_collection_for_select(@services, "id", "category"), class:"form-control", placeholder: "Tipo de Servicio", include_blank: true %>
+            </div>
+            <div class="mb-4" >
+              <%= select_tag "sub_service_id", "",  class:"form-control", placeholder: "Tipo de Problema", include_blank: true %>
+            </div>
+            <div class="form-actions row justify-content-center">
+              <input type="submit" value="Siguiente" class="btn-blue-big">
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -26,11 +26,12 @@
      <div class="container">
         <div class="row justify-content-center">
           <div class="col-sm-8 text-center">
-             <div class="card-price">
-             
+             <div class="card-price" id="card-price">
+
              </div>
           </div>
-        </div>    
+        </div>
+      </div>
     </div>
   </div>
 </div>

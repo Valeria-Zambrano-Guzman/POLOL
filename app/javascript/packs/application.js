@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { priceSelector } from '../price_selector';
+import { serviceSelector } from '../service_selector';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -34,5 +36,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
+  priceSelector();
+  serviceSelector();
   initAutocomplete();
 });

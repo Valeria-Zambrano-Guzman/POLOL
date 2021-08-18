@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
 
   devise_for :customers
@@ -18,12 +19,12 @@ Rails.application.routes.draw do
   get 'pages/list_c', to: 'pages#list_c'
   get 'pages/list_p', to: 'pages#list_p'
 
+  resources :services do
+    resources :sub_services, shallow: true
+  end
   resources :professionals, only: [:index] do
     resources :reviews, only: [:create, :show]
     resources :appointments, only: [:create, :show]
-    resources :specialities do
-      resources :services
-    end
+    resources :specialities
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

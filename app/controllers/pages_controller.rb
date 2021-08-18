@@ -10,6 +10,7 @@ class PagesController < ApplicationController
 
   def search
     @services = Service.all
+    @sub_services = SubService.all
   end
 
   def result
