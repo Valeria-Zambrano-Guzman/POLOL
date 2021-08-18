@@ -9,10 +9,10 @@
             <%= text_field_tag :query, params[:query], class: "form-control search-input", placeholder: "Dirección" %>
           </div>
           <div class="mb-4"> 
-            <%= select_tag "service", options_from_collection_for_select(@services, "id", "category"), class:"form-control", placeholder: "Tipo de Servicio" %>
+            <%= select_tag "category", options_from_collection_for_select(@services, "id", "category"), class:"form-control", placeholder: "Tipo de Servicio" %>
           </div>
           <div class="mb-4" >
-            <%= select_tag "service", options_from_collection_for_select(@services, "id", "sub_category"),  class:"form-control", placeholder: "Tipo de Problema" %>
+            <%= select_tag "sub_category", options_from_collection_for_select(@sub_services, "id", "sub_category"),  class:"form-control", placeholder: "Tipo de Problema" %>
           </div>
           <div class="form-actions row justify-content-center">
             <input type="submit" value="Siguiente" class="btn-blue-big">
@@ -26,8 +26,8 @@
      <div class="container">
         <div class="row justify-content-center">
           <div class="col-sm-8 text-center">
-             <div class="card-price">
-             
+             <div class="card-price" id="card-price">
+
              </div>
           </div>
         </div>    

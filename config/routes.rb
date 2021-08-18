@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'pages/accepted', to: 'pages#accepted'
   get 'pages/rejected', to: 'pages#rejected'
 
+  resources :sub_services, only: [:show]
   resources :users, only: [:index] do
     resources :reviews, only: [:create, :show]
     resources :appointments, only: [:create, :show]

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_13_205638) do
+ActiveRecord::Schema.define(version: 2021_08_17_213453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,11 +62,9 @@ ActiveRecord::Schema.define(version: 2021_08_13_205638) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.decimal "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "category"
-    t.string "sub_category"
   end
 
   create_table "specialities", force: :cascade do |t|
@@ -77,6 +75,15 @@ ActiveRecord::Schema.define(version: 2021_08_13_205638) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["professional_id"], name: "index_specialities_on_professional_id"
     t.index ["service_id"], name: "index_specialities_on_service_id"
+  end
+
+  create_table "sub_services", force: :cascade do |t|
+    t.string "sub_category"
+    t.integer "price"
+    t.bigint "service_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["service_id"], name: "index_sub_services_on_service_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -110,4 +117,5 @@ ActiveRecord::Schema.define(version: 2021_08_13_205638) do
   add_foreign_key "reviews", "users", column: "professional_id"
   add_foreign_key "specialities", "services"
   add_foreign_key "specialities", "users", column: "professional_id"
+  add_foreign_key "sub_services", "services"
 end
