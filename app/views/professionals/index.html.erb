@@ -4,7 +4,9 @@
      <div class="padding-nav-card">
         <% @professionals.each do |professional| %>
           <div class="card-form">
-            <h2 class="text"><%= professional.email %></h2>
+            <%= link_to professional_path(professional, params: {sub_service_id: params[:sub_service_id]}) do %>
+              <h2 class="text"><%= professional.email %></h2>
+            <% end %> 
           </div>
         <% end %>
       </div>

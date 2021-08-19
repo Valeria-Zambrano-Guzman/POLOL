@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="padding-nav-card">  
+        <div class="card-profilepro">
+          
+          <% if @selected_sub_service.present? %>
+             <h2><%= @selected_sub_service.service.category.capitalize %></h2>
+             <h4><%= @selected_sub_service.sub_category %></h4>
+          <% else %>
+            <% @professional.specialities.each do |s| %>
+              <h2><%= s.sub_service.service.category.capitalize %></h2> 
+              <h4><%= s.sub_service.sub_category %></h4>
+            <% end %>
+          <% end %>
+          
+          <div class="mb-4 text-center">
+            <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+          </div>
+          <p><% 3.times do |i| %>
+            <span class="fas fa-star star-yellow"></span>
+          <% end %></p> <%# aqui va la calificación %>
+
+            <h3><%= @professional.first_name %></h3>
+            <h3><%= @professional.last_name %></h3>
+            <p><%= @professional.certification %></p>
+            <p><%= @professional.biography %></p>
+
+          <div class="btn-center">
+            <button class="btn-lightblue-big", professionals_path >Volver</button>
+            <button class="btn-blue-big">Enviar Solicitud</button>
+            <%= link_to 'Volver', professionals_path , class:"btn-lightblue-big" %>
+            <%= link_to 'Enviar Solicitud', professionals_path , class:"btn-blue-big" %>
+          </div>
+      
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 justify-content-center">
+      <%# aqui va el mapa %>
+    </div>
+  </div>
+</div>
