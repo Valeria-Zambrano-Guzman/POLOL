@@ -12,10 +12,6 @@ class PagesController < ApplicationController
     @services = Service.all
     @sub_services = SubService.all
   end
-
-  def result
-  end
-
   
   def show_profile_c
     @services = Service.all

@@ -27,8 +27,6 @@
             <p><%= @professional.biography %></p>
 
           <div class="btn-center">
-            <button class="btn-lightblue-big", professionals_path >Volver</button>
-            <button class="btn-blue-big">Enviar Solicitud</button>
             <%= link_to 'Volver', professionals_path , class:"btn-lightblue-big" %>
             <%= link_to 'Enviar Solicitud', professionals_path , class:"btn-blue-big" %>
           </div>
@@ -37,7 +35,11 @@
       </div>
     </div>
     <div class="col-md-6 justify-content-center">
-      <%# aqui va el mapa %>
+        <div class="my-2" id="map"
+          style="width: 100%; height: 100%;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
     </div>
   </div>
 </div>
