@@ -6,14 +6,7 @@ Rails.application.routes.draw do
   devise_for :professionals
 
   get 'uikit', to: 'pages#uikit'
-
-  get 'type', to: 'pages#type'
   get 'pages/search', to: 'pages#search'
-  get 'pages/result', to: 'pages#result'
-  get 'pages/show_profile_c', to: 'pages#show_profile_c'
-  get 'pages/create_profile_c', to: 'pages#create_profile_c'
-  get 'pages/list_c', to: 'pages#list_c'
-  get 'pages/list_p', to: 'pages#list_p'
 
   resources :services do
     resources :sub_services, shallow: true

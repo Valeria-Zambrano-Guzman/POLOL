@@ -9,7 +9,8 @@
             <span class="text"><%= professional.first_name %></span>
             <span class="text"><%= professional.last_name %></span>
             <button class="btn-blue-small btn-position"><%= link_to  "ver perfil", professional_path(professional) %></button>
-          <% end %>
+            <%# <button class="btn-blue-small btn-position"><%= link_to  "ver perfil", professional_path(professional), params: {sub_service_id: params[:sub_service_id]}) do %> <% end %> </button> %>
+          
         </div>
 
       </div>
