@@ -15,4 +15,8 @@ class ProfessionalsController < ApplicationController
       }
     end
   end
+
+  def show
+    @professional = Professional.find(params[:id])
+  end
 end
