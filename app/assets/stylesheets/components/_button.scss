@@ -37,3 +37,19 @@
 .btn-blue-small:hover {
     background-color: #2F1E95;
 }
+.btn-position {
+    display: block;
+    margin-left: 29%;
+    margin-bottom: 10%;
+    margin-top: 5%;
+}
+a {
+    color: #f9f9f9;
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover {
+    background-color: #2F1E95;
+    text-decoration: none;
+    color: white;
+}

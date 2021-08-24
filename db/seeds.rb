@@ -25,16 +25,35 @@ puts "*" * 80
 professional_one = Professional.new(
   email: "pro_one@mail.com",
   password: "123456",
-  address: "Amunátegui 20, Santiago, Chile"
+  address: "Amunátegui 20, Santiago, Chile",
+  first_name: "Sergio",
+  last_name: "Soto",
+  biography: "Especialista en arreglo de sifón",
+  phone_number: "+56912345678"
 )
 professional_one.save!
 
 professional_two = Professional.new(
   email: "pro_two@mail.com",
   password: "123456",
-  address: "Huérfanos 1112, Santiago, Chile"
+  address: "Huérfanos 1112, Santiago, Chile",
+  first_name: "Miguel",
+  last_name: "Pérez",
+  biography: "Especialista en arreglo de sockets",
+  phone_number: "+56934567891"
 )
 professional_two.save!
+
+professional_three = Professional.new(
+  email: "pro_three@mail.com",
+  password: "123456",
+  address: "Huérfanos 1261, Santiago, Chile",
+  first_name: "José",
+  last_name: "Ramirez",
+  biography: "Especialista en arreglo de sockets",
+  phone_number: "+56956789452"
+)
+professional_three.save!
 puts "*" * 80
 puts "Done!"
 puts "*" * 80
@@ -128,6 +147,13 @@ pro_two_socket = Specialitie.new(
   description: "pro_two_socket"
 )
 pro_two_socket.save!
+
+pro_three_socket = Specialitie.new(
+  professional: professional_three,
+  sub_service: socket,
+  description: "pro_three_socket"
+)
+pro_three_socket.save!
 puts "*" * 80
 puts "Done!"
 puts "*" * 80
