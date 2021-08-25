@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row justify-content-center" style="width: 100%; height: 400px;">
+    <div class="col-md-6">
+      <div class="padding-nav-card">
+        <div class="avatar-round" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= asset_path('customer.png')%>)">
+          Sistema de calificaciones.
+        </div>
+        
+         <%= link_to "Registrate Como Cliente", new_customer_registration_path %>
+        
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="padding-nav-card">
+        <img class="avatar-round" alt="professional" src="assets/images/professional.png" />
+         <%= link_to "Registrate Como Profesional", new_professional_registration_path %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'uikit', to: 'pages#uikit'
   get 'pages/search', to: 'pages#search'
+  get 'pages/sign_up', to: 'pages#sign_up'
 
   resources :services do
     resources :sub_services, shallow: true
