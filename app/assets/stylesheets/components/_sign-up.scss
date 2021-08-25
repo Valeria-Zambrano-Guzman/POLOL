@@ -1,0 +1,25 @@
+.sign-up {
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    padding: 20%;
+}
+
+.avatar-round {
+    width: 250px;
+    border-radius: 50%;
+    border: 10px solid #9DDFD3;
+}
+.sign-up--images {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: center;
+}  
+
+.sign-up--text {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 10%;
+}  

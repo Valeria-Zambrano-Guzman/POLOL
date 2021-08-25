@@ -3,8 +3,6 @@
     <div class="col-md-6">
       <div class="padding-nav-card">  
         <div class="card-profilepro">
-
-          
           <% if @selected_sub_service.present? %>
              <h2><%= @selected_sub_service.service.category.capitalize %></h2>
              <h4><%= @selected_sub_service.sub_category %></h4>
@@ -28,8 +26,7 @@
             <p><%= @professional.biography %></p>
 
           <div class="btn-center">
-            <%= link_to 'Volver', professionals_path , class:"btn-lightblue-big" %>
-            <%= link_to 'Enviar Solicitud', professionals_path , class:"btn-blue-big" %>
+             <button class="btn-lightblue-big"><%= link_to  "Volver", :back %></button>
           </div>
         </div>
       </div>
