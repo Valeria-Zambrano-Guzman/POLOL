@@ -62,14 +62,22 @@ puts "*" * 80
 puts "Creating customers"
 puts "*" * 80
 customer_one = Customer.new(
-  email: "cus_one@mail.com",
+  email: "mauri@mail.com",
   password: "123456",
+  first_name: "Mauricio",
+  last_name: "castro",
+  phone_number: "56945857458",
+  address: "Eduardo Frei 19"
 )
 customer_one.save!
 
 customer_two = Customer.new(
-  email: "cus_two@mail.com",
+  email: "jose@mail.com",
   password: "123456",
+  first_name: "Jose",
+  last_name: "Chávez",
+  phone_number: "56955878541",
+  address: "Los Placeres 7"
 )
 customer_two.save!
 puts "*" * 80

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="padding-nav-card">  
+        <div class="card-profilepro">
+
+            <div class="mb-4 text-center">
+                <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+            </div>
+
+            <p><% 3.times do |i| %>
+                <span class="fas fa-star star-yellow"></span>
+            <% end %></p> <%# aqui va la calificación %>
+
+            <h3><%= @customer.first_name %></h3>
+            <h3><%= @customer.last_name %></h3>
+            <h3><%= @customer.email %></h3>
+            <p><%= @customer.address %></p>
+            <p><%= @customer.phone_number %></p>
+
+          <div class="btn-center">
+            <%= link_to 'Volver', pages_search_path , class:"btn-lightblue-big" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 justify-content-center">
+        <div class="my-2" id="map"
+          style="width: 100%; height: 100%;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      <%# aqui va el mapa %>
+    </div>
+  </div>
+</div>

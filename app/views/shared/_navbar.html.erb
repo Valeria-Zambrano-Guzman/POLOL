@@ -17,11 +17,18 @@
       <li class="nav-item dropdown">
         <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        
             <% if current_user.professional? %>
               <%= link_to "Editar Perfil",  edit_professional_registration_path, class: "dropdown-item" %>
             <% else %>
               <%= link_to "Editar Perfil", edit_customer_registration_path, class: "dropdown-item" %>
-            <% end %> 
+            <% end %>
+
+            <% if current_user.professional? %>
+              <%= link_to "Ver Perfil",  professional_path(current_user.id), class: "dropdown-item" %>
+            <% else %>
+              <%= link_to "Ver Perfil", customer_path(current_user.id), class: "dropdown-item" %>
+            <% end %>
 
             <% if current_user.professional? %>
               <%= link_to "Cerrar Sesión", destroy_professional_session_path, method: :delete, class: "dropdown-item" %>

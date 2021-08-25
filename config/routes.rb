@@ -11,9 +11,12 @@ Rails.application.routes.draw do
   resources :services do
     resources :sub_services, shallow: true
   end
+
   resources :professionals, only: [:index, :show] do
     resources :reviews, only: [:create, :show]
     resources :appointments, only: [:create, :show]
     resources :specialities
   end
+
+  resources :customers, only: [:show]
 end
