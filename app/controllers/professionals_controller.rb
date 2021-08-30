@@ -19,7 +19,6 @@ class ProfessionalsController < ApplicationController
   end
 
   def show
-
     @selected_sub_service = SubService.find_by(id: params[:sub_service_id])
     # @review = Review.new(Professional: @list)
   end
