@@ -14,19 +14,20 @@
           <% end %>
           
           <div class="mb-4 text-center">
-            <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+            <img class="avatar-large" alt="avatar-large" src="/assets/professional.png" />
           </div>
           <p><% 3.times do |i| %>
             <span class="fas fa-star star-yellow"></span>
           <% end %></p> <%# aqui va la calificación %>
-
+          <div class="row justify-content-center">
             <h3><%= @professional.first_name %></h3>
             <h3><%= @professional.last_name %></h3>
+          </div>
             <p><%= @professional.certification %></p>
             <p><%= @professional.biography %></p>
 
           <div class="btn-center">
-             <button class="btn-lightblue-big"><%= link_to  "Volver", :back %></button>
+             <button class="btn-lightblue-small"><%= link_to  "Volver", :back %></button>
           </div>
         </div>
       </div>
@@ -38,8 +39,6 @@
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-
-      <%# aqui va el mapa %>
 
     </div>
   </div>
