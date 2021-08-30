@@ -32,11 +32,12 @@
             <%= f.input :address %>
             <% if f.object.professional? %>
               <%= f.input :biography %>
-              <%# <%= f.select %>
+              <%# <%= f.input :category, collection: ['electricista', 'gasfiter'], selected: 'electricista' %>
+              
+              <%# <%= f.input :category, :collection => current_user.specialities.sub_services.services.category, :label_method => :category, :value_method => :id,:label => "category" ,:include_blank => false %> 
               <p>Upload your documents</p>
               <%= f.input :photos, as: :file, input_html: { multiple: true } %>
             <% end %>
-
 
           </div>
 
