@@ -88,11 +88,11 @@ puts "*" * 80
 puts "Creating services"
 puts "*" * 80
 
-gafiter = Service.new(
-  category: "gafiter",
+gasfiter = Service.new(
+  category: "gasfiter",
 )
 
-gafiter.save!
+gasfiter.save!
 
 electricista = Service.new(
   category: "electricista",
@@ -109,14 +109,14 @@ puts "*" * 80
 
 sifon = SubService.new(
   sub_category: "Cambio de sifón",
-  service: gafiter,
+  service: gasfiter,
   price: 3500
 )
 sifon.save!
 
 llave = SubService.new(
   sub_category: "Cambio de llave de paso",
-  service: gafiter,
+  service: gasfiter,
   price: 5000
 )
 llave.save!
