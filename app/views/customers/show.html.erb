@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="padding-nav-card">  
+        <div class="card-profilepro">
+
+            <div class="mb-4 text-center">
+                <img class="avatar-large" alt="avatar-large" src="/assets/customer.png" />
+            </div>
+            <div class="row justify-content-center">
+              <h5><%= @customer.first_name %></h5>
+              <h5><%= @customer.last_name %></h5>
+            </div>
+            <p><%= @customer.email %></p>
+            <p><%= @customer.address %></p>
+            <p><%= @customer.phone_number %></p>
+
+          <div class="btn-center">
+            <button class="btn-lightblue-big"><%= link_to 'Volver', pages_search_path %></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 justify-content-center">
+        <div class="my-2" id="map"
+          style="width: 100%; height: 100%;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      <%# aqui va el mapa %>
+    </div>
+  </div>
+</div>
