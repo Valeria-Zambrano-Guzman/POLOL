@@ -3,17 +3,16 @@
     <div class="col-md-6">
       <div class="padding-nav-card">  
         <div class="card-profilepro">
-
-            <div class="mb-4 text-center">
-                <img class="avatar-large" alt="avatar-large" src="/assets/customer.png" />
-            </div>
-            <div class="row justify-content-center">
-              <h5><%= @customer.first_name %></h5>
-              <h5><%= @customer.last_name %></h5>
-            </div>
-            <p><%= @customer.email %></p>
-            <p><%= @customer.address %></p>
-            <p><%= @customer.phone_number %></p>
+          <div class="mb-4 text-center">
+              <img class="avatar-large" alt="avatar-large" src="/assets/customer.png" />
+          </div>
+          <div class="row justify-content-center">
+            <h5><%= @customer.first_name %></h5>
+            <h5><%= @customer.last_name %></h5>
+          </div>
+          <p><%= @customer.email %></p>
+          <p><%= @customer.address %></p>
+          <p><%= @customer.phone_number %></p>
 
           <div class="btn-center">
             <button class="btn-lightblue-big"><%= link_to 'Volver', pages_search_path %></button>

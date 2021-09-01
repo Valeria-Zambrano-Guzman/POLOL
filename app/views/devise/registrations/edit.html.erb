@@ -31,9 +31,13 @@
             <%= f.input :phone_number %>
             <%= f.input :address %>
             <% if f.object.professional? %>
+              <%= f.input :certification, collection: [true, false], selected: false %>
               <%= f.input :biography %>
-              <%# <%= f.input :category, collection: ['electricista', 'gasfiter'], selected: 'electricista' %>
-              
+              <%= f.input :category, collection: ["gasfiter", "eléctrico"], selected: "gasfiter" %>
+              <%#= f.simple_fields_for :services do | s | %>
+                <%# Console %>
+                <%#= s.association :services, collection: Service.active.order(:category), prompt: "Choose a Company" %>              
+              <%# end %>
               <%# <%= f.input :category, :collection => current_user.specialities.sub_services.services.category, :label_method => :category, :value_method => :id,:label => "category" ,:include_blank => false %> 
               <p>Upload your documents</p>
               <%= f.input :photos, as: :file, input_html: { multiple: true } %>
@@ -51,7 +55,7 @@
 
         <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-        <button class="btn-lightblue-small"><%= link_to "Back", :back %></button>
+        <button class="btn-blue-small"><%= link_to "Back", :back %></button>
         <br>
         <br>
         <br>
