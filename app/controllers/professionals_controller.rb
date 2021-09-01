@@ -21,6 +21,12 @@ class ProfessionalsController < ApplicationController
   def show
     @selected_sub_service = SubService.find_by(id: params[:sub_service_id])
     # @review = Review.new(Professional: @list)
+    # @markers = @professionals.geocoded.map do |user|
+    #   {
+    #     lat: user.latitude,
+    #     lng: user.longitude
+    #   }
+    # end
   end
 
   private
@@ -28,6 +34,5 @@ class ProfessionalsController < ApplicationController
   def set_professional
     @professional = Professional.find(params[:id])
   end
-
 
 end
