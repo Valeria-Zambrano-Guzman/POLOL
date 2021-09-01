@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="padding-nav-card">  
+        <div class="card-profilepro">
+          <% if @selected_sub_service.present? %>
+             <h2><%= @selected_sub_service.service.category.capitalize %></h2>
+             <h4><%= @selected_sub_service.sub_category %></h4>
+          <% else %>
+            <% @professional.specialities.each do |s| %>
+              <h2><%= s.sub_service.service.category.capitalize %></h2> 
+              <h4><%= s.sub_service.sub_category %></h4>
+            <% end %>
+          <% end %>
+          
+          <div class="mb-4 text-center">
+            <img class="avatar-large" alt="avatar-large" src="/assets/professional.png" />
+          </div>
+          <p><% 3.times do |i| %>
+            <span class="fas fa-star star-yellow"></span>
+          <% end %></p> <%# aqui va la calificación %>
+          <div class="row justify-content-center">
+            <h3><%= @professional.first_name %></h3>
+            <h3><%= @professional.last_name %></h3>
+          </div>
+            <p><%= @professional.certification %></p>
+            <p><%= @professional.biography %></p>
+
+          <div class="btn-center">
+             <button class="btn-lightblue-small"><%= link_to  "Volver", :back %></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 justify-content-center">
+
+        <div class="my-2" id="map"
+          style="width: 100%; height: 100%;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+
+    </div>
+  </div>
+</div>

@@ -1,15 +1,22 @@
 <div class="container">
   <div class="row justify-content-center" >
     <div class="col-md-6">
-     <div class="padding-nav-card">
-        <% @professionals.each do |professional| %>
-          <div class="card-form">
-            <h2 class="text"><%= professional.email %></h2>
-          </div>
-        <% end %>
+      <div class="padding-nav-card">
+        <div class="list-card">
+          <h2>Listado de profesionales cercanos</h2>
+          <% @professionals.each  do |professional| %>        
+            <img class="avatar-list" src="/assets/professional.png" alt="profesional">
+            <div class="row justify-content-center">
+              <h3><%= professional.first_name %></h3>
+              <h3><%= professional.last_name %></h3>
+            </div>
+            <div class="btn-list">
+              <button class="btn-blue-small"><%= link_to  "Ver Perfil", professional_path(professional, params: {sub_service_id: params[:sub_service_id]}) %></button>
+            </div>
+          <% end %> 
+        </div>
       </div>
     </div>
-
     <div class="col-md-6">
       <div class="my-2" id="map"
         style="width: 100%; height: 100vh;"

@@ -1,4 +1,6 @@
 class ProfessionalsController < ApplicationController
+  before_action :set_professional, only: [:show]
+
   def index
     @professionals = Professional.all
     if params[:sub_service_id].present?
@@ -15,4 +17,17 @@ class ProfessionalsController < ApplicationController
       }
     end
   end
+
+  def show
+    @selected_sub_service = SubService.find_by(id: params[:sub_service_id])
+    # @review = Review.new(Professional: @list)
+  end
+
+  private
+
+  def set_professional
+    @professional = Professional.find(params[:id])
+  end
+
+
 end
