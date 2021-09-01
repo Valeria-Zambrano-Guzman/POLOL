@@ -19,13 +19,16 @@
           <p><% 3.times do |i| %>
             <span class="fas fa-star star-yellow"></span>
           <% end %></p> <%# aqui va la calificación %>
-        
-          <h3><%= @professional.first_name %></h3>
-          <h3><%= @professional.last_name %></h3>
-          <p><%= @professional.phone_number %></p>
-          <p><%= @professional.address %></p>
-          <p>Certificación: <%= @professional.certification %></p>
-          <p><%= @professional.biography %></p>
+          
+          <div class="row justify-content-center">
+            <h3><%= @professional.first_name %></h3>
+            <h3><%= @professional.last_name %></h3>
+          </div>
+            <p>Certificación: <%= @professional.certification %></p>
+            <p><%= @professional.address %></p>
+            <p><%= @professional.biography %></p>
+            <p><%= @professional.phone_number %></p>
+            <p><%= @professional.email %></p>
 
           <div class="btn-center">
             <% if current_user.type == "Customer" %>
