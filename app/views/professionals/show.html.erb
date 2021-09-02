@@ -29,7 +29,9 @@
             <p><%= @professional.email %></p>
 
           <div class="btn-center">
-             <button class="btn-lightblue-small"><%= link_to  "Volver", :back %></button>
+            <% if current_user.type == "Customer" %>
+              <button class="btn-lightblue-small"><%= link_to  "Volver", :back %></button>
+            <% end %>
           </div>
         </div>
       </div>
